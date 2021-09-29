@@ -1,0 +1,6 @@
+name: Manhunt
+version: '${project.version}'
+main: me.sufficient02.manhunt.Manhunt
+api-version: 1.17
+authors: [ Astor ]
+description: This is a manhunt plugin, all players have the ability to track down one specific player
