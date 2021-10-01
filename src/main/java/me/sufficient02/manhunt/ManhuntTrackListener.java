@@ -23,9 +23,9 @@ public class ManhuntTrackListener implements Listener {
     public void onPlayerMove(PlayerMoveEvent e) {
         Player movePlayer = e.getPlayer();
 
-        if (plugin.huntedPlayer == null || movePlayer != plugin.huntedPlayer || !updatePosition) {
-            return;
-        }
+        // if (plugin.huntedPlayer == null || movePlayer != plugin.huntedPlayer || !updatePosition) {
+        //    return;
+        // }
 
         for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
             plugin.updateCompassLocation(onlinePlayer);
@@ -98,19 +98,6 @@ public class ManhuntTrackListener implements Listener {
 
         // set compass // todo updatePosition hier auch beachten
         plugin.setCompass(respawnPlayer);
-    }
-
-    @EventHandler
-    public void lockCompass(InventoryClickEvent e) {
-        Player clickedPlayer = (Player) e.getWhoClicked();
-        if (plugin.huntedPlayer == null || clickedPlayer == plugin.huntedPlayer) {
-            return;
-        }
-
-        ItemStack clickedItem = e.getCurrentItem();
-        if (clickedItem != null && clickedItem.getType() == Material.COMPASS) {
-            e.setCancelled(true);
-        }
     }
 
 }

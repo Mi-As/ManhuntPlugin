@@ -27,7 +27,15 @@ public final class Manhunt extends JavaPlugin {
         // Plugin startup logic
         instance = this;
         getServer().getPluginManager().registerEvents(new ManhuntTrackListener(), this);
+        getServer().getPluginManager().registerEvents(new ManhuntLockItem(), this);
         Objects.requireNonNull(getCommand("track")).setExecutor(new ManhuntTrackCommand());
+
+        /*Runnable triggerUpdateCompass = new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        };*/
     }
 
     @Override

@@ -48,9 +48,9 @@ public class ManhuntTrackCommand  implements CommandExecutor {
             onlinePlayer.setGameMode(GameMode.SURVIVAL);
 
             // add compass
-            if (onlinePlayer != plugin.huntedPlayer) {
+            //if (onlinePlayer != plugin.huntedPlayer) {
                 plugin.setCompass(onlinePlayer);
-            }
+            //}
         }
 
         Bukkit.broadcastMessage(ChatColor.GREEN + "The hunted player is " + plugin.huntedPlayer.getDisplayName()
